@@ -3,11 +3,11 @@
  */
 
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Conversion de unidades, de metro, yardas, pies y pulgadas.
+ * @method Conversor
+ * @param {string} id, Este tiene los inputs de metro, yardas, pies o pulgadas
+ * @param {number} valor, contiene el valor inputs de metro, yardas, pies o pulgadas
+ * @return
  */
 function Conversor (id,valor) {
     if (isNaN(valor)){
