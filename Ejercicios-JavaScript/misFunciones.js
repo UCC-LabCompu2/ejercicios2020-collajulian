@@ -10,30 +10,43 @@
  * @return
  */
 function Conversor (id,valor) {
+
+    var metro, pulgada, pie, yarda
+if(valor.includes(",")){
+    valor=valor.replace(",", ".");
+
+}
     if (isNaN(valor)){
         alert("Se ingreso un valor invalido");
-        document.unidades.unid_metro.value = "";
-        document.unidades.unid_pulgada.value = "";
-        document.unidades.unid_pie.value = "";
-        document.unidades.unid_yarda.value = "";
+        metro="";
+        pulgada="";
+        pie="";
+        yarda="";
     }else if (id == "metro"){
-        document.unidades.unid_pulgada.value = 39.3701*valor;
-        document.unidades.unid_pie.value = 3.2808*valor;
-        document.unidades.unid_yarda.value = 1.0936*valor;
+        metro = valor;
+        pulgada= 39.3701*valor;
+        pie = 3.2808*valor;
+        yarda = 1.0936*valor;
     }else if (id == "pulgada"){
-        document.unidades.unid_metro.value = 0.0254*valor;
-        document.unidades.unid_pie.value = 0.08333*valor;
-        document.unidades.unid_yarda.value = 0.02777*valor;
+        metro = 0.0254*valor;
+        pulgada = valor;
+        pie = 0.08333*valor;
+        yarda = 0.02777*valor;
     }else if (id == "pie"){
-        document.unidades.unid_pulgada.value = 11.9999*valor;
-        document.unidades.unid_metro.value = 0.3047*valor;
-        document.unidades.unid_yarda.value = 0.3333*valor;
+        metro = 11.9999*valor;
+        pulgada = 0.3047*valor;
+        pie = valor;
+        yarda = 0.3333*valor;
     }else if (id == "yarda"){
-        document.unidades.unid_pulgada.value = 35.9999*valor;
-        document.unidades.unid_pie.value = 3*valor;
-        document.unidades.unid_metro.value = 0.9144*valor;
+        metro = 35.9999*valor;
+        pulgada = 3*valor;
+        pie = 0.9144*valor;
+        yarda = valor;
     }
-
+    document.unidades.unid_metro.value = Math.round(metro*100)/100;
+    document.unidades.unid_pulgada.value = Math.round(pulgada*100)/100;
+    document.unidades.unid_pie.value = Math.round(pie*100)/100;
+    document.unidades.unid_yarda.value = Math.round(yarda*100)/100;
 
 }
 function convertirGR(id) {
@@ -60,7 +73,7 @@ if(valorMO== "val_mostrar"){
 }
 
 function calcularsuma() {
-var num1,num2;
+    var num1,num2;
 
 num1=Number(document.getElementsByName("sum_num1") [0].value);
 num2=Number(document.getElementsByName("sum_num2") [0].value);
