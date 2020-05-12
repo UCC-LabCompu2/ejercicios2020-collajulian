@@ -104,3 +104,27 @@ function calculardiv() {
     document.getElementsByName("div_total") [0].innerHTML=num1/num2;
 
 }
+
+function cargarweb() {
+
+    var cant, unidad, urlcomp;
+
+    cant = document.getElementById("distancia").value;
+    unidad = document.getElementsByName("unidades")[0].value;
+    urlcomp = "segundaWeb.html#" + cant + "#" + unidad;
+    window.open(urlcomp);
+
+}
+
+function cargarResultados() {
+
+    var urlComp, can, un;
+
+    urlComp = window.location.href.split("/" ) [5];
+    can = urlComp.split("#") [1];
+    un = urlComp.split("#") [2];
+
+    document.getElementById("dist").value = can + " " + un;
+
+
+}
