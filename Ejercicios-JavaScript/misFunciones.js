@@ -241,3 +241,26 @@ function dibujarImagen(posX,posY) {
     }
 
 }
+x=0;
+dx=2;
+
+function animarAuto() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+
+    var imagen = new Image();
+    imagen.src = "images/auto.png";
+
+    canvas.width = canvas.width;
+
+    imagen.onload = function () {
+
+        ctx.drawImage(imagen, x, 100);
+
+    }
+    if (x>canvas.width){
+        x=0;
+    }
+    x+=dx;
+}
