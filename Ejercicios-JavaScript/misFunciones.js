@@ -222,3 +222,22 @@ function dibujarCuadriculado() {
 
     ctx.closePath();
 }
+
+function dibujarImagen(posX,posY) {
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    console.log(posX,posY);
+
+    var imagen = new Image();
+    imagen.src = "images/auto.png";
+
+    canvas.width = canvas.width;
+
+    imagen.onload = function () {
+
+        ctx.drawImage(imagen, posX, posY);
+
+    }
+
+}
